@@ -1,8 +1,10 @@
 #!/bin/sh
-cd mdebase
-./format.sh
-cd ..
+format() {
+	echo "-- $1"
+	cd $1
+	clang-format --verbose -i `find $2 -name "*.c" -or -name "*.h"`
+	cd ..
+}
 
-cd mdelibs
-./format.sh
-cd ..
+format mdebase "mdm milkwm mpanel"
+format mdelibs "src include"
