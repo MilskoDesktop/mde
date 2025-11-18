@@ -5,6 +5,10 @@ project(
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/mdecmake)
 
+include(CheckIncludeFiles)
+
+check_include_files(paths.h HAS_PATHS_H)
+
 configure_file(include/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
