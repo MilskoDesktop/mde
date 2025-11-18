@@ -18,7 +18,6 @@ add_subdirectory(external/milsko)
 
 include_directories(external)
 
-add_subdirectory(mdecmake)
 add_subdirectory(mdelibs)
 add_subdirectory(mdebase)
 add_subdirectory(mdeutils)
