@@ -9,6 +9,7 @@ include(CheckIncludeFiles)
 
 check_include_files(paths.h HAS_PATHS_H)
 
+include(GNUInstallDirs)
 configure_file(include/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
@@ -18,6 +19,7 @@ add_subdirectory(external/milsko)
 
 include_directories(external)
 
+add_subdirectory(mdeartworks)
 add_subdirectory(mdelibs)
 add_subdirectory(mdebase)
 add_subdirectory(mdeutils)

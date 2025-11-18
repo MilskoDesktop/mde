@@ -17,3 +17,6 @@
 [submodule "mdecmake"]
 	path = mdecmake
 	url = ../mdecmake
+[submodule "mdeartworks"]
+	path = mdeartworks
+	url = ../mdeartworks
