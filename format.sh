@@ -7,4 +7,5 @@ format() {
 }
 
 format mdebase "mdm milkwm mpanel"
-format mdelibs "src include"
+format mdelibs "audio core include"
+format mdeutils "mbiff mauplay"
