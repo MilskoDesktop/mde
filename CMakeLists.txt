@@ -10,6 +10,8 @@ include(CheckIncludeFiles)
 check_include_files(paths.h HAS_PATHS_H)
 
 include(GNUInstallDirs)
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_FULL_LIBDIR}")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 configure_file(include/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
