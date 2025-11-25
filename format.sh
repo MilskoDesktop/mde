@@ -8,5 +8,5 @@ format() {
 }
 
 format mdebase "mdm milkwm mpanel"
-format mdelibs "audio audio/pthread core sound include"
+format mdelibs "audio audio/thread core sound include"
 format mdeutils "mbiff mauplay"

@@ -23,5 +23,7 @@ include_directories(external)
 
 add_subdirectory(mdeartworks)
 add_subdirectory(mdelibs)
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
 add_subdirectory(mdebase)
+endif()
 add_subdirectory(mdeutils)
