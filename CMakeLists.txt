@@ -16,8 +16,6 @@ configure_file(include/config.h.in config.h)
 configure_file(wizard.sh.in wizard.sh)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-set(CLASSIC_THEME 1)
-set(USE_FREETYPE2 0)
 add_subdirectory(external/milsko)
 
 include_directories(external)
