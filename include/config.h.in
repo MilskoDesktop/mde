@@ -10,6 +10,8 @@
 #define ICON32DIR DATAROOTDIR "/icons/mde/32x32"
 #define ICON16DIR DATAROOTDIR "/icons/mde/16x16"
 
+#define COMMON_LOOK MwNmodernLook, 0, MwNbitmapFont, 1
+
 #cmakedefine HAS_PATHS_H
 
 #endif
