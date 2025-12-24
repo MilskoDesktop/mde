@@ -22,3 +22,6 @@
 	path = mdeartworks
 	url = ../mdeartworks
 	update = rebase
+[submodule "external/xemil"]
+	path = external/xemil
+	url = ../xemil

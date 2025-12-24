@@ -17,6 +17,7 @@ configure_file(wizard.sh.in wizard.sh)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(external/milsko)
+add_subdirectory(external/xemil)
 
 include_directories(external)
 
