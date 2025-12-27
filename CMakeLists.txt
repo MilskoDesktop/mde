@@ -16,8 +16,28 @@ configure_file(include/config.h.in config.h)
 configure_file(wizard.sh.in wizard.sh)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-add_subdirectory(external/milsko)
-add_subdirectory(external/xemil)
+option(USE_SYSTEM_MILSKO "Use system Milsko" OFF)
+option(USE_SYSTEM_XEMIL "Use system Xemil" OFF)
+
+macro(setup_sys_libs)
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -I${CMAKE_INSTALL_FULL_INCLUDEDIR}")
+	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L${CMAKE_INSTALL_FULL_LIBDIR} -Wl,-R${CMAKE_INSTALL_FULL_LIBDIR}")
+	set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -L${CMAKE_INSTALL_FULL_LIBDIR} -Wl,-R${CMAKE_INSTALL_FULL_LIBDIR}")
+	set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -L${CMAKE_INSTALL_FULL_LIBDIR} -Wl,-R${CMAKE_INSTALL_FULL_LIBDIR}")
+	set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -L${CMAKE_INSTALL_FULL_LIBDIR} -Wl,-R${CMAKE_INSTALL_FULL_LIBDIR}")
+endmacro()
+
+if(USE_SYSTEM_MILSKO)
+	setup_sys_libs()
+else()
+	add_subdirectory(external/milsko)
+endif()
+
+if(USE_SYSTEM_XEMIL)
+	setup_sys_libs()
+else()
+	add_subdirectory(external/xemil)
+endif()
 
 include_directories(external)
 
